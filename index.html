@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños Mi Amorcito ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd1dc,#e6ccff);
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.pantalla{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.sobre{
+font-size:140px;
+cursor:pointer;
+transition:.4s;
+animation:flotar 2s infinite ease-in-out;
+}
+
+.sobre:hover{
+transform:scale(1.1);
+}
+
+.texto{
+font-size:28px;
+color:#ffffff;
+font-weight:bold;
+text-shadow:2px 2px 10px rgba(0,0,0,.3);
+}
+
+.contenido{
+display:none;
+padding:30px;
+animation:aparecer 1s;
+}
+
+.carta{
+max-width:850px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.foto{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:0 auto 25px;
+border:6px solid #ffb6c1;
+}
+
+h1{
+text-align:center;
+color:#ff4f8b;
+margin-bottom:20px;
+}
+
+p{
+font-size:18px;
+line-height:1.9;
+color:#444;
+text-align:justify;
+}
+
+.regalo{
+margin-top:40px;
+text-align:center;
+}
+
+.boton{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:20px;
+cursor:pointer;
+background:#ff4f8b;
+color:white;
+transition:.3s;
+}
+
+.boton:hover{
+transform:scale(1.05);
+}
+
+.gatito{
+display:none;
+margin-top:25px;
+animation:aparecer 1s;
+}
+
+.gatito img{
+max-width:350px;
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.mensaje-final{
+font-size:22px;
+margin-top:20px;
+color:#ff4f8b;
+font-weight:bold;
+}
+
+.corazon{
+position:fixed;
+font-size:25px;
+animation:subir 6s linear infinite;
+pointer-events:none;
+}
+
+@keyframes flotar{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+@keyframes aparecer{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes subir{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="musica" autoplay loop>
+<source src="imágenes/Isolde/cancion.mp3" type="audio/mpeg">
+</audio>
+
+<div class="pantalla" id="inicio">
+
+<div class="sobre" onclick="abrirCarta()">
+💌
+</div>
+
+<div class="texto">
+Haz clic aquí, mi amorcito ❤️
+</div>
+
+</div>
+
+<div class="contenido" id="contenido">
+
+<div class="carta">
+
+<img src="imágenes/isolde/novia.jpg" class="foto">
+
+<h1>
+🎂 Feliz Cumpleaños Mi Amorcito 🎂
+</h1>
+
+<p>
+
+Mi querida Isolde,
+
+Hoy cumples 20 años y no podía dejar pasar este día sin recordarte lo especial que eres para mí.
+
+Desde que llegaste a mi vida, has llenado mis días de momentos hermosos, sonrisas sinceras y recuerdos que guardo con muchísimo cariño. Eres una persona maravillosa, fuerte, inteligente y con un corazón enorme que ilumina a todos los que tienen la suerte de conocerte.
+
+Quiero que hoy disfrutes cada segundo de tu cumpleaños porque te lo mereces más que nadie. Mereces cumplir tus sueños, alcanzar cada meta que te propongas y ser inmensamente feliz.
+
+Gracias por cada conversación, cada sonrisa, cada momento compartido y por permitirme acompañarte en una parte de tu camino.
+
+Deseo que este nuevo año de vida te traiga muchas alegrías, salud, éxitos y experiencias increíbles. Y deseo también seguir viendo esa mirada tan hermosa que logra alegrar incluso mis días más difíciles.
+
+No existe regalo suficiente para expresar todo el cariño que siento por ti, pero espero que este pequeño detalle pueda sacarte una sonrisa.
+
+Feliz cumpleaños, mi amorcito.
+
+Te quiero muchísimo y espero que este sea el inicio de uno de los mejores años de tu vida.
+
+Con todo mi cariño,
+
+❤️ Diego ❤️
+
+</p>
+
+<div class="regalo">
+
+<h2>🎁 Tengo un regalito para ti 🎁</h2>
+
+<br>
+
+<button class="boton" onclick="mostrarGatito()">
+Ábreme ❤️
+</button>
+
+<div class="gatito" id="gatito">
+
+<img src="imágenes/Isolde/gatito.jpg">
+
+<div class="mensaje-final">
+ Te amo mi vida 💙
+<br><br>
+Feliz cumpleaños amor mio❤️
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirCarta(){
+
+document.getElementById("inicio").style.display="none";
+document.getElementById("contenido").style.display="block";
+
+let musica=document.getElementById("musica");
+
+musica.play().catch(()=>{});
+
+for(let i=0;i<30;i++){
+crearCorazon();
+}
+
+}
+
+function mostrarGatito(){
+
+document.getElementById("gatito").style.display="block";
+
+for(let i=0;i<50;i++){
+crearCorazon();
+}
+
+}
+
+function crearCorazon(){
+
+let corazon=document.createElement("div");
+
+corazon.className="corazon";
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+corazon.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+corazon.remove();
+},6000);
+
+}
+
+setInterval(crearCorazon,800);
+
+</script>
+
+</body>
+</html>
